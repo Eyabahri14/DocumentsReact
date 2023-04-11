@@ -1,17 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { useParams } from 'react-router-dom';
-import products from "../products.json";
+import { useParams } from "react-router-dom";
+import { getallProducts } from "../service/api";
 
 function ProductDetails() {
-    const {name} = useParams();
-    const product = products.find((product)=>product.name === name);
+  const {id} = useParams();
+
+  const [product, setProduct] = useState({});
+
+
+  useEffect(() => {
+    getProduct();
+  }, []);
+
+  const getProduct = async () => {
+    const response = await getallProducts(id);
+    setProduct(response.data); //ajout de la reponse dans product du useState
+    console.log(response.data);
+  };
+
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-     
-      <Card  style={{ width: '18rem' }}   className={"text-center" + (product.like >= 6 ? " bestProduct" : "")} border="secondary">
+  <div>
+      {product.id !== undefined ? (
+     <Card  style={{ width: '18rem' }}   className={"text-center" + (product.like >= 6 ? " bestProduct" : "")} border="secondary">
         <Card.Header>
-          <Card.Img variant="top" src={require(`../assets/images/${product.img}`)} alt="Product Img" height={200} />
+        <Card.Img variant="top" src={product.img && require("../assets/images/" + product.img)} alt="Product Img" height={200} />
+
         </Card.Header>
 
         <Card.Body>
@@ -24,9 +38,11 @@ function ProductDetails() {
          
         </Card.Body>
       </Card>
-  
-    </div>
-  )
+      ): (
+        <p> Product does not exist </p>
+      )}
+  </div>
+  );
 }
 
-export default ProductDetails
+export default ProductDetails;

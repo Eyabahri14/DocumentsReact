@@ -8,6 +8,8 @@ export default function NavigationBar() {
      <nav>
         <NavLink  style={({isActive})=>{ return isActive ? {color : "red "} : {color :"blue" } } } 
         to="/products" >Products</NavLink>
+        <NavLink style={({isActive})=>{ return isActive ? {color : "red "} : {color :"blue" } } }  
+        to="/products/addProduct"> Add product </NavLink>
        
      </nav>
       
