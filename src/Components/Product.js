@@ -1,5 +1,6 @@
 import { React, useState } from 'react';
 import { Card, Col, Row, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 //from class component to functionnal component 
 function Product(props) {
   const [product, setProduct] = useState(props.product);
@@ -23,7 +24,7 @@ function Product(props) {
         </Card.Header>
 
         <Card.Body>
-          <Card.Title>Title : {product.name}</Card.Title>
+          <Card.Title><Link to={`/products/${product.name}`}>Title : {product.name}</Link></Card.Title>
           <Card.Text>Likes : {product.like}</Card.Text>
           <Card.Text>Quantity : {product.quantity}</Card.Text>
           <Card.Text>Description : {product.description}</Card.Text>

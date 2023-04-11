@@ -8,3 +8,9 @@
   @keyframes clignote {  
     50% { opacity: 0.5; }
   }
+
+  nav a {
+    margin:10px; 
+    font-size: 18px;
+    
+}
