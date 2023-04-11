@@ -28,10 +28,10 @@ export default function AddProduct() {
   const addNewP = async () => {
     addProduct(product)
     .then((response)=>{
-     navigate("/products"); //redirection vers /products
+     //redirection vers /products
      console.log(response);
     })
-    
+    navigate("/products");
   };
 
   

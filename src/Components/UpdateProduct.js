@@ -37,8 +37,8 @@ export default function UpdateProduct() {
   const UpdateProduct = async () => {
     editProduct(param.id, product)
     .then((response)=>{
-     navigate("/sdfqsdfsdf");
     })
+    navigate("/products");
   };
   return (
     <div>

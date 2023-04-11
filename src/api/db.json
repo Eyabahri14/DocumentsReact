@@ -8,6 +8,24 @@
       "like": 0,
       "quantity": 10,
       "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page"
+    },
+    {
+      "name": "Keyboard2",
+      "price": "10",
+      "img": "product3.jpg",
+      "like": 0,
+      "quantity": "10",
+      "description": "lorem lorem lorem ",
+      "id": 2
+    },
+    {
+      "name": "Mouse2",
+      "price": "10",
+      "img": "product2.jpg",
+      "like": 0,
+      "quantity": "10",
+      "description": "lorem lorem lorem ",
+      "id": 3
     }
   ]
 }
